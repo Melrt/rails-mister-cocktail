@@ -1,0 +1,15 @@
+<h1>Details of a cocktail</h1>
+<div class="card mb-3">
+  <img src="..." class="card-img-top" alt="">
+  <div class="card-body">
+    <h5 class="card-title"><%= @cocktail.name %></h5>
+    <p class="card-text">
+      <% @cocktail.doses.each do |dose| %>
+        <%= dose.description %> of <%= dose.ingredient.name %>
+          <br>
+      <% end %>
+    </p>
+    <p class="card-text"><small class="text-muted">The perfect cocktail for a perfect party</small></p>
+  </div>
+  <%= link_to 'Back to list', cocktails_path, class: 'btn btn-warning' %>
+</div>

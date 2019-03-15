@@ -33,7 +33,7 @@ puts 'Creating cocktails...'
 5.times do
   # Créer un cocktail vide
   cocktail = Cocktail.new(
-    name: Faker::Ancient.primordial
+    name: Faker::Ancient.titan
   )
   cocktail.save!
 

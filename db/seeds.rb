@@ -30,7 +30,7 @@ end
 
 puts 'Creating cocktails...'
 
-5.times do
+6.times do
   # Créer un cocktail vide
   cocktail = Cocktail.new(
     name: Faker::Ancient.titan

@@ -2,7 +2,10 @@
 <div class="m-3">
   <%= simple_form_for @cocktail do |f| %>
     <%= f.input :name %>
-    <%= f.submit 'Add to list', class: 'btn btn-warning' %></div>
+    <%= f.association :ingredients, as: :check_boxes %>
+    <%= f.submit 'Add to list', class: 'btn btn-warning' %>
   <% end %>
-    <%= link_to 'Cancel', cocktails_path, class: 'btn btn-info' %>
+</div>
+<div class="m-3">
+  <%= link_to 'Cancel', cocktails_path, class: 'btn btn-info' %>
 </div>

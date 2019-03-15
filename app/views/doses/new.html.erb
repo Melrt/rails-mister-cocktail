@@ -1,0 +1,11 @@
+<h1>Add a new dose !</h1>
+<div class="m-3">
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+  <%= f.input :description %>
+  <%= f.submit 'Add to list', class: 'btn btn-warning' %>
+  <% end %>
+</div>
+<div class="m-3">
+  <%= link_to 'Cancel', cocktails_path, class: 'btn btn-info' %>
+</div>

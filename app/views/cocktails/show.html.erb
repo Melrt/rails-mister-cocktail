@@ -1,13 +1,14 @@
 <div class="wrapper vh-100">
   <h1 class="text-center p-4">Cocktail's details</h1>
-  <div class="container">
-    <div class="row">
+  <div class="container card-cocktail">
+    <h2 class="text-center p-3"><%= @cocktail.name %></h2>
+    <div class="row align-items-center">
       <div class="col text-center">
-        <%= image_tag "cocktail1.jpg", alt: "cocktail Theia" %>
+
+        <%= image_tag "cocktail5.jpg", height: '300px' %>
       </div>
       <div class="col">
-        <h5 class="card-title"><%= @cocktail.name %></h5>
-        <p class="card-text">
+        <p class="card-content">
           <% @cocktail.doses.each do |dose| %>
           <%= dose.description %> of <%= dose.ingredient.name%>
           <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
@@ -18,7 +19,7 @@
         <% end %>
         <%= link_to 'Add an Ingredient', new_cocktail_dose_path(@cocktail), class: 'btn btn-warning' %>
 
-        <p class="card-text"><small class="text-muted">"The perfect cocktail for a perfect party"</small></p>
+        <h4 class="card-text"><small class="text-muted"><br>"the perfect cocktail for a perfect party"</small></h4>
       </div>
     </div>
   </div>

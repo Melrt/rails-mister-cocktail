@@ -3,14 +3,14 @@
     <h1 class="banner-text">tchin-tchin <br> Mister Cocktails</h1>
   </div>
   <div class="container text-center">
-    <h1>Lets discover</h1>
+    <h1 class= "p-4">Lets discover_</h1>
 
     <div class="row justify-content-center">
       <% @cocktails.each do |cocktail| %>
       <div class="col">
         <div class="card" style="width: 18rem;">
-          <div class="car-photo">
-            <%= image_path "banner.jpg" %>
+          <div class="card-photo">
+            <%= image_tag "cocktail6.jpg", height: '200px' %>
           </div>
           <div class="card-body">
             <h5 class="card-title"> <%= cocktail.name %> </h5>
@@ -20,7 +20,8 @@
         </div>
       </div>
       <% end %>
-      <%= link_to '+ Add a cocktail', new_cocktail_path, class: 'btn btn-warning' %>
     </div>
+    <h1 class="p-4">Feel free to add a cocktail_</h1>
+    <%= link_to '+ Add a cocktail', new_cocktail_path, class: 'btn btn-warning mb-5' %>
   </div>
 </div>

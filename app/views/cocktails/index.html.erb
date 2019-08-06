@@ -3,11 +3,15 @@
     <h1 class="banner-text">tchin-tchin <br> Mister Cocktails</h1>
   </div>
   <div class="container text-center">
-    <%= link_to '+ Add a cocktail', new_cocktail_path, class: 'btn btn-warning' %>
+    <h1>Lets discover</h1>
+
     <div class="row justify-content-center">
       <% @cocktails.each do |cocktail| %>
       <div class="col">
         <div class="card" style="width: 18rem;">
+          <div class="car-photo">
+            <%= image_path "banner.jpg" %>
+          </div>
           <div class="card-body">
             <h5 class="card-title"> <%= cocktail.name %> </h5>
             <p class="card-text"> <%= cocktail.ingredients.count %> ingredients</p>
@@ -16,6 +20,7 @@
         </div>
       </div>
       <% end %>
+      <%= link_to '+ Add a cocktail', new_cocktail_path, class: 'btn btn-warning' %>
     </div>
   </div>
 </div>

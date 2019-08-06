@@ -1,22 +1,30 @@
-<div class="card-category m-3" style="background-image: url(https://fac.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Ffac.2F2018.2F07.2F30.2Fb2d73f10-3760-4955-beb2-b95d6595e5e9.2Ejpeg/748x372/quality/90/crop-from/center/nos-meilleurs-cocktails-a-base-de-vodka.jpeg)">
-  Cocktail's details
-</div>
+<div class="wrapper vh-100">
+  <h1 class="text-center p-4">Cocktail's details</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <%= image_tag "cocktail1.jpg", alt: "cocktail Theia" %>
+      </div>
+      <div class="col">
+        <h5 class="card-title"><%= @cocktail.name %></h5>
+        <p class="card-text">
+          <% @cocktail.doses.each do |dose| %>
+          <%= dose.description %> of <%= dose.ingredient.name%>
+          <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fa fa-trash"></i>
+          <% end %>
+          <br>
+        </p>
+        <% end %>
+        <%= link_to 'Add an Ingredient', new_cocktail_dose_path(@cocktail), class: 'btn btn-warning' %>
 
-<div class="card mb-3">
-  <%= cl_image_tag @cocktail.photo, height: 200, width: 400, crop: :fill %>
-  <div class="card-body">
-    <h5 class="card-title"><%= @cocktail.name %></h5>
-    <p class="card-text">
-      <% @cocktail.doses.each do |dose| %>
-      <%= dose.description %> of <%= dose.ingredient.name %>
-      <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-      <i class="fa fa-trash destroy_dose"></i>
-      <% end %>
-      <br>
-    </p>
-    <% end %>
-    <p class="card-text"><small class="text-muted">The perfect cocktail for a perfect party</small></p>
+        <p class="card-text"><small class="text-muted">"The perfect cocktail for a perfect party"</small></p>
+      </div>
+    </div>
   </div>
-  <%= link_to 'Add an Ingredient', new_cocktail_dose_path(@cocktail), class: 'btn btn-warning' %>
-  <%= link_to 'Back to list', cocktails_path, class: 'btn btn-warning' %>
+  <div class="text-center m-5">
+    <%= link_to cocktails_path, class: 'btn btn-info' do %>
+    <i class="fas fa-long-arrow-alt-left"></i> Back to cocktails list
+    <% end %>
+  </div>
 </div>
